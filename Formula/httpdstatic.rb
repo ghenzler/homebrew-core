@@ -27,7 +27,7 @@ class Httpdstatic < Formula
   end
   
   def install
-    fetch_apr
+    #fetch_apr
     
     # fixup prefix references in favour of opt_prefix references
     inreplace "Makefile.in",
@@ -73,7 +73,7 @@ class Httpdstatic < Formula
                           "--with-suexec-caller=_www",
                           "--with-port=8080",
                           "--with-sslport=8443",
-                          "--with-included-apr",
+                          #"--with-included-apr",
                           "--enable-ssl-staticlib-deps",
                           #"--with-apr=#{Formula["apr"].opt_prefix}",
                           #"--with-apr-util=#{Formula["apr-util"].opt_prefix}",
