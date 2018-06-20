@@ -1,4 +1,4 @@
-class httpdstatic < Formula
+class HttpdStatic < Formula
   desc "Apache HTTP server"
   homepage "https://httpd.apache.org/"
   url "https://www.apache.org/dyn/closer.cgi?path=httpd/httpd-2.4.33.tar.bz2"
