@@ -17,7 +17,18 @@ class Httpdstatic < Formula
   depends_on "openssl"
   depends_on "pcre"
 
+  def fetch_apr
+    ["apr-1.6.3", "apr-util-1.6.1"].each do |tb|
+      curl "-s", "-o", "#{tb}.tar.gz", "https://www.apache.org/dist/apr/#{tb}.tar.gz"
+      system "tar -xzf #{tb}.tar.gz"
+      dir = tb.reverse.split('-', 2).map(&:reverse).reverse[0]
+      FileUtils.mv(tb, "srclib/#{dir}")
+    end
+  end
+  
   def install
+    fetch_apr
+    
     # fixup prefix references in favour of opt_prefix references
     inreplace "Makefile.in",
       '#@@ServerRoot@@#$(prefix)#', '#@@ServerRoot@@'"##{opt_prefix}#"
