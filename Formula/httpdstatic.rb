@@ -1,5 +1,5 @@
 class Httpdstatic < Formula
-  desc "Apache HTTP server"
+  desc "Apache HTTP server (static linked)"
   homepage "https://httpd.apache.org/"
   url "https://www.apache.org/dyn/closer.cgi?path=httpd/httpd-2.4.33.tar.bz2"
   sha256 "de02511859b00d17845b9abdd1f975d5ccb5d0b280c567da5bf2ad4b70846f05"
